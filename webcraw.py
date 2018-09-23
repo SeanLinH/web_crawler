@@ -7,7 +7,7 @@ import pandas as pd
 
 class Technews:
     '''In this case, default website is \"https://technews.tw/category/celebrity/\".'''
-    def option(self, title, date, link, author, article):
+    def __init__(self, title=[], date=[], link=[], author=[], article=[]):
         '''This place are  Temporary storage of all options'''
         self.title = title
         self.date = date
@@ -18,7 +18,7 @@ class Technews:
     def reset(self, n = 1):
         '''Set all option empty. If you want to grab Info that you have to 
         run this def'''
-        self.option([],[],[],[],[])
+        self.__init__([],[],[],[],[])
 
     def page_set(self, url = 'https://technews.tw/category/celebrity/', cate = '', page = 1):
         '''You have set your web, includind url, category, page.
